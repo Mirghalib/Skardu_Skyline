@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us · Skyline Skardu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/Slider.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+        }
+
+        .Container1 {
+            padding: 5px;
+            margin-bottom: 5px;
+            background-color: lightgray;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Container1 .Row1 {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10%;
+            margin-right: 10%;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .Container1 .Row1 .HelpLine {
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            animation: bounce-top 0.9s both;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon {
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul {
+            list-style-type: none;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li {
+            display: inline-block;
+            animation: bounce-top 0.9s both;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li a {
+            text-decoration: none;
+            color: rgb(33, 33, 33);
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li a i {
+            font-size: 25px;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li a :hover {
+            color: rgb(9, 181, 239);
+            animation: heartbeat 1.5s ease-in-out infinite both;
+        }
+
+        .Container2 {
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        .Container2 .Row2 {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10%;
+            margin-right: 10%;
+            flex-wrap: wrap;
+        }
+
+        .Container2 .Row2 .Logo {
+            padding: 5px;
+            text-align: center;
+            animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+
+        .Container2 .Row2 .Email {
+            padding: 5px;
+            text-align: center;
+            animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+
+        .Container3 {
+            padding: 5px;
+            margin-bottom: 5px;
+            background-color: rgb(33, 33, 33);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Container3 .Row3 {
+            display: flex;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            flex-wrap: wrap;
+        }
+
+        .Container3 .Row3 ul {
+            list-style-type: none;
+        }
+
+        .Container3 .Row3 ul li {
+            margin: 5px;
+            text-align: center;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .Container3 .Row3 ul li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            border-bottom: 3px solid rgb(255, 255, 255);
+            padding: 10px;
+        }
+
+        .Container3 .Row3 ul li a:hover {
+            border-top: 3px solid red;
+            border-bottom: none;
+        }
+
+        .Container7 {
+            padding: 5px;
+            margin-top: 20px;
+        }
+
+        .Container7 .Row7 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .Container7 .Row7 .Message {
+            text-align: center;
+        }
+
+        .Container7 .Row7 .Message h1 {
+            padding: 25px;
+            background-color: lightgray;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Container7 .Row7 .Message p {
+            padding: 10px;
+            margin-top: 10px;
+            line-height: 36px;
+        }
+
+        .JoinFormCard {
+            width: 100%;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 25px;
+            text-align: left;
+            border: 2px solid rgb(222, 222, 222);
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .JoinFormCard h4 {
+            padding: 10px;
+            background-color: lightgray;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.4rem;
+            border-radius: 5px;
+        }
+
+        .JoinFormCard .form-group {
+            margin-bottom: 20px;
+        }
+
+        .JoinFormCard label {
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+            color: rgb(33, 33, 33);
+        }
+
+        .JoinFormCard input,
+        .JoinFormCard textarea,
+        .JoinFormCard select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgb(222, 222, 222);
+            border-radius: 5px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1rem;
+            background-color: white;
+        }
+
+        .JoinFormCard input:focus,
+        .JoinFormCard textarea:focus,
+        .JoinFormCard select:focus {
+            outline: none;
+            border-color: lightgray;
+        }
+
+        .JoinFormCard .submit-btn {
+            background-color: lightgray;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            width: auto;
+            display: inline-block;
+            margin-top: 10px;
+            color: rgb(33, 33, 33);
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .JoinFormCard .submit-btn:hover {
+            border-top: 3px solid red;
+            border-bottom: none;
+            background-color: aqua;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            animation: heartbeat 1.5s ease-in-out infinite both;
+        }
+
+        .BenefitGrid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            column-gap: 2px;
+            row-gap: 15px;
+            margin-top: 30px;
+        }
+
+        .BenefitGrid .BenefitItem {
+            width: 280px;
+            padding: 15px;
+            margin-top: 5px;
+            text-align: justify;
+            text-align-last: center;
+            border: 2px solid rgb(222, 222, 222);
+            border-radius: 5px;
+        }
+
+        .BenefitGrid .BenefitItem h4 {
+            padding: 10px;
+            background-color: lightgray;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .BenefitGrid .BenefitItem p {
+            padding: 10px;
+            background-color: lightgray;
+            margin-top: 5px;
+            line-height: 36px;
+            text-align-last: center;
+            border-radius: 5px;
+        }
+
+        .Footer {
+            margin-top: 20px;
+            padding: 5px;
+            background-color: rgb(33, 33, 33);
+        }
+
+        .Footer .FooterRow {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .Footer .FooterRow .FooterMessage {
+            padding: 50px;
+        }
+
+        .Footer .FooterRow .FooterMessage h1 {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .Footer .FooterRow .FooterMessage p {
+            text-align: center;
+            color: white;
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon {
+            display: flex;
+            justify-content: center;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul {
+            list-style-type: none;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li {
+            display: inline-block;
+            border: 2px solid white;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li a {
+            text-decoration: none;
+            color: White;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+            font-size: 50px;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li a :hover {
+            color: rgb(9, 181, 239);
+            animation: heartbeat 1.5s ease-in-out infinite both;
+        }
+
+        .Footer .FooterRow .FooterMenu {
+            display: flex;
+            justify-content: center;
+            padding: 25px;
+        }
+
+        .Footer .FooterRow .FooterMenu ul {
+            list-style-type: none;
+        }
+
+        .Footer .FooterRow .FooterMenu ul li {
+            display: inline-block;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .Footer .FooterRow .FooterMenu ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .Footer .FooterRow .FooterMenu ul li a:hover {
+            border-bottom: 3px solid white;
+        }
+
+        @media (min-width:320px) and (max-width:576px) {
+            .Container1 .Row1 {
+                flex-direction: column;
+                flex: 100%;
+            }
+
+            .Container2 .Row2 {
+                flex-direction: column;
+                flex: 100%;
+            }
+
+            .BenefitGrid .BenefitItem {
+                flex: 1 1 100%;
+            }
+
+            .JoinFormCard {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .Footer .FooterRow {
+                flex: 100%;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li {
+                margin: 1px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 20px;
+            }
+
+            .Footer .FooterRow .FooterMenu {
+                text-align: center;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: block;
+            }
+        }
+
+        @media (min-width:577px) and (max-width:768px) {
+            .BenefitGrid .BenefitItem {
+                flex: 1 1 49%;
+            }
+
+            .Footer .FooterRow {
+                flex: 100%;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li {
+                margin: 1px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 20px;
+            }
+
+            .Footer .FooterRow .FooterMenu {
+                text-align: center;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: block;
+            }
+        }
+
+        @media (min-width:769px) and (max-width:992px) {
+            .BenefitGrid .BenefitItem {
+                flex: 1 1 33%;
+            }
+
+            .Footer .FooterRow {
+                flex: 100%;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li {
+                margin: 1px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 30px;
+            }
+
+            .Footer .FooterRow .FooterMenu {
+                text-align: center;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: inline-block;
+            }
+        }
+
+        @media (min-width:993px) and (max-width:1400px) {
+            .BenefitGrid .BenefitItem {
+                flex: 1 1 24%;
+            }
+
+            .Footer .FooterRow {
+                flex: 100%;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li {
+                margin: 1px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 40px;
+            }
+
+            .Footer .FooterRow .FooterMenu {
+                text-align: center;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: inline-block;
+            }
+        }
+
+        @media (min-width:1401px) and (max-width:3840px) {
+            .BenefitGrid .BenefitItem {
+                flex: 1 1 24%;
+            }
+
+            .Footer .FooterRow {
+                flex: 100%;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li {
+                margin: 1px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 50px;
+            }
+
+            .Footer .FooterRow .FooterMenu {
+                text-align: center;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: inline-block;
+            }
+        }
+
+        @keyframes bounce-top {
+            0% {
+                -webkit-transform: translateY(-45px);
+                transform: translateY(-45px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                opacity: 1;
+            }
+
+            24% {
+                opacity: 1;
+            }
+
+            40% {
+                -webkit-transform: translateY(-24px);
+                transform: translateY(-24px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            65% {
+                -webkit-transform: translateY(-12px);
+                transform: translateY(-12px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            82% {
+                -webkit-transform: translateY(-6px);
+                transform: translateY(-6px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            93% {
+                -webkit-transform: translateY(-4px);
+                transform: translateY(-4px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            25%,
+            55%,
+            75%,
+            87% {
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            100% {
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+                opacity: 1;
+            }
+        }
+
+        @keyframes tracking-in-expand-fwd {
+            0% {
+                letter-spacing: -0.5em;
+                -webkit-transform: translateZ(-700px);
+                transform: translateZ(-700px);
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.6;
+            }
+
+            100% {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes heartbeat {
+            from {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: center center;
+                transform-origin: center center;
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            10% {
+                -webkit-transform: scale(0.91);
+                transform: scale(0.91);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            17% {
+                -webkit-transform: scale(0.98);
+                transform: scale(0.98);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            33% {
+                -webkit-transform: scale(0.87);
+                transform: scale(0.87);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            45% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container1">
+        <div class="Row1">
+            <div class="HelpLine"><span></span>HelpLine:111-000-111</div>
+            <div class="SocialMediaIcon">
+                <ul>
+                    <li><a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/"><i class="fa-brands fa-square-youtube"></i></a></li>
+                    <li><a href="https://www.Instagram.com/"><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href="https://www.twitter.com/"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-square-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="Container2">
+        <div class="Row2">
+            <div class="Logo">Skyline Skardu</div>
+            <div class="Email">join@skylineskd.com</div>
+        </div>
+    </div>
+
+    <div class="Container3">
+        <div class="Row3">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Destinations.html">Destinations</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="JoinUs.html" style="border-top: 3px solid red; border-bottom: none;">Join Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="Container7">
+        <div class="Row7">
+            <div class="Message">
+                <h1>Become part of the Skyline family</h1>
+                <p>Whether you're a traveller, a storyteller, or someone who simply loves the mountains — there’s a
+                    place for you here. Join our network and help others discover the raw beauty of Skardu.</p>
+            </div>
+
+            <div class="JoinFormCard">
+                <h4>✧ apply for membership ✧</h4>
+                <form>
+                    <div class="form-group">
+                        <label>Full name</label>
+                        <input type="text" placeholder="e.g., Mir Ghalib">
+                    </div>
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" placeholder="e.g., +92 3111 121212">
+                    </div>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <select>
+                            <option>Pakistan</option>
+                            <option>China</option>
+                            <option>Iran</option>
+                            <option>Kuwait</option>
+                            <option> Dubai</option>
+                            <option>Saudi Arabia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>I'm interested as</label>
+                        <select>
+                            <option>Tour guide / trek leader</option>
+                            <option>Photographer / content creator</option>
+                            <option>Hotel / restaurant owner</option>
+                            <option>Travel lover</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Why do you want to join? (optional)</label>
+                        <textarea rows="4" placeholder="Tell us about your connection to Skardu..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send application →</button>
+                </form>
+            </div>
+
+            <div class="Message" style="margin-top: 40px;">
+                <h1>Why join us?</h1>
+                <p>We're building a community that shares stories, tips, and adventures. Members get exclusive updates
+                    and chances to collaborate.</p>
+            </div>
+
+            <div class="BenefitGrid">
+                <div class="BenefitItem">
+                    <h4>📸 share your work</h4>
+                    <p>Get featured on our gallery & social channels. Your photos could inspire thousands.</p>
+                </div>
+                <div class="BenefitItem">
+                    <h4>📩 insider tips</h4>
+                    <p>Receive monthly updates with hidden gems, seasonal advice, and local news.</p>
+                </div>
+                <div class="BenefitItem">
+                    <h4>🤝 meet fellow explorers</h4>
+                    <p>Connect with guides, photographers, and travellers who love this region.</p>
+                </div>
+                <div class="BenefitItem">
+                    <h4>🛍️ partner discounts</h4>
+                    <p>Enjoy exclusive special offers from our accommodation and trekking partners.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Footer">
+        <div class="FooterRow">
+            <div class="FooterMessage">
+                <h1>Skyline Skardu</h1>
+                <p>Skardu is where the mountains touch the sky and the rivers sing ancient songs. Come for the
+                    breathtaking views, stay for the peace that settles deep in your soul. This isn't just a trip;
+                    it's a homecoming.</p>
+            </div>
+            <div class="FooterSocialMediaIcon">
+                <ul>
+                    <li><a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/"><i class="fa-brands fa-square-youtube"></i></a></li>
+                    <li><a href="https://www.Instagram.com/"><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href="https://www.twitter.com/"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-square-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="FooterMenu">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Destinations.html">Destinations</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="JoinUs.html">Join Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

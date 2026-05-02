@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline Skardu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS\Slider.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+        }
+
+        .Container1 {
+            padding: 5px;
+            margin-bottom: 5px;
+            background-color: lightgray;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Container1 .Row1 {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10%;
+            margin-right: 10%;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .Container1 .Row1 .HelpLine {
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            animation: bounce-top 0.9s both;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon {
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul {
+            list-style-type: none;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li {
+            display: inline-block;
+            animation: bounce-top 0.9s both;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li a {
+            text-decoration: none;
+            color: rgb(33, 33, 33);
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li a i {
+            font-size: 25px;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li a :hover {
+            color: rgb(9, 181, 239);
+            animation: heartbeat 1.5s ease-in-out infinite both;
+        }
+
+        .Container2 {
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        .Container2 .Row2 {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10%;
+            margin-right: 10%;
+            flex-wrap: wrap;
+        }
+
+        .Container2 .Row2 .Logo {
+            padding: 5px;
+            text-align: center;
+            animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+
+        .Container2 .Row2 .Email {
+            padding: 5px;
+            text-align: center;
+            animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+
+        .Container3 {
+            padding: 5px;
+            margin-bottom: 5px;
+            background-color: rgb(33, 33, 33);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Container3 .Row3 {
+            display: flex;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            flex-wrap: wrap;
+        }
+
+        .Container3 .Row3 ul {
+            list-style-type: none;
+        }
+
+        .Container3 .Row3 ul li {
+            margin: 5px;
+            text-align: center;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .Container3 .Row3 ul li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            border-bottom: 3px solid rgb(255, 255, 255);
+            padding: 10px;
+        }
+
+        .Container3 .Row3 ul li a:hover {
+            border-top: 3px solid red;
+            border-bottom: none;
+        }
+
+        .Container5 {
+            padding: 5px;
+            margin-top: 20px;
+        }
+
+        .Container5 .Row5 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .Container5 .Row5 .Message {
+            text-align: center;
+        }
+
+        .Container5 .Row5 .Message h1 {
+            padding: 10px;
+            background-color: lightgray;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Container5 .Row5 .Message p {
+            padding: 25px;
+            margin-top: 10px;
+            line-height: 36px;
+        }
+
+        .Container5 .Row5 .MustVisitPlaces {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            column-gap: 2px;
+            align-items: stretch;
+        }
+
+        .Container5 .Row5 .MustVisitPlaces .Place {
+            display: flex;
+            flex-direction: column;
+            margin-top: 5px;
+            text-align: justify;
+            text-align-last: center;
+            border: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .Container5 .Row5 .MustVisitPlaces .Place:hover {
+            animation: heartbeat 2s ease-in-out infinite both;
+        }
+
+        .Container5 .Row5 .MustVisitPlaces .Place h4 {
+            padding: 10px;
+            background-color: lightgray;
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Container5 .Row5 .MustVisitPlaces .Place p {
+            padding: 10px;
+            background-color: lightgray;
+            margin-top: 5px;
+            line-height: 28px;
+            flex: 1;
+        }
+
+        .Container5 .Row5 .MustVisitPlaces .Place img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-top: 5px;
+            border-radius: 10px;
+            padding: 10px;
+            flex-shrink: 0;
+        }
+
+        .Container6 {
+            padding: 5px;
+            margin-top: 20px;
+        }
+
+        .Container6 .Row6 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .Container6 .Row6 .Message {
+            text-align: center;
+        }
+
+        .Container6 .Row6 .Message h1 {
+            padding: 10px;
+            background-color: lightgray;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Container6 .Row6 .Message p {
+            padding: 25px;
+            margin-top: 10px;
+            line-height: 36px;
+        }
+
+        .Container6 .Row6 .FamousPlaces {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            column-gap: 2px;
+            row-gap: 10px;
+            align-items: stretch;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place {
+            display: flex;
+            flex-direction: column;
+            margin-top: 5px;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px;
+            padding-bottom: 5px;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place:hover {
+            animation: heartbeat 2s ease-in-out infinite both;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place h4 {
+            padding: 10px;
+            background-color: lightgray;
+            width: 100%;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place p {
+            padding: 10px;
+            background-color: lightgray;
+            margin-top: 5px;
+            width: 100%;
+            line-height: 28px;
+            flex: 1;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-top: 5px;
+            border: 2px solid black;
+            padding: 5px;
+            flex-shrink: 0;
+        }
+
+        .Footer {
+            margin-top: 20px;
+            padding: 5px;
+            background-color: rgb(33, 33, 33);
+        }
+
+        .Footer .FooterRow {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .Footer .FooterRow .FooterMessage {
+            padding: 50px;
+        }
+
+        .Footer .FooterRow .FooterMessage h1 {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .Footer .FooterRow .FooterMessage p {
+            text-align: center;
+            color: white;
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon {
+            display: flex;
+            justify-content: center;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul {
+            list-style-type: none;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li {
+            display: inline-block;
+            border: 2px solid white;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+            font-size: 50px;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li a :hover {
+            color: rgb(9, 181, 239);
+            animation: heartbeat 1.5s ease-in-out infinite both;
+        }
+
+        .Footer .FooterRow .FooterMenu {
+            display: flex;
+            justify-content: center;
+            padding: 25px;
+        }
+
+        .Footer .FooterRow .FooterMenu ul {
+            list-style-type: none;
+        }
+
+        .Footer .FooterRow .FooterMenu ul li {
+            display: inline-block;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .Footer .FooterRow .FooterMenu ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .Footer .FooterRow .FooterMenu ul li a:hover {
+            border-bottom: 3px solid white;
+        }
+
+        @media (min-width:320px) and (max-width:576px) {
+
+            .Container1 .Row1,
+            .Container2 .Row2 {
+                flex-direction: column;
+                flex: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .Container5 .Row5 .MustVisitPlaces .Place {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .Container5 .Row5 .MustVisitPlaces .Place {
+                flex: 1 1 calc(50% - 2px);
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 992px) {
+            .Container5 .Row5 .MustVisitPlaces .Place {
+                flex: 1 1 calc(33.33% - 2px);
+            }
+        }
+
+        @media (min-width: 993px) {
+            .Container5 .Row5 .MustVisitPlaces .Place {
+                flex: 1 1 calc(25% - 2px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .Container6 .Row6 .FamousPlaces .Place {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .Container6 .Row6 .FamousPlaces .Place {
+                flex: 1 1 calc(50% - 2px);
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 992px) {
+            .Container6 .Row6 .FamousPlaces .Place {
+                flex: 1 1 calc(33.33% - 2px);
+            }
+        }
+
+        @media (min-width: 993px) {
+            .Container6 .Row6 .FamousPlaces .Place {
+                flex: 1 1 calc(25% - 2px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 20px;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: block;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 20px;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: block;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 992px) {
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 30px;
+            }
+        }
+
+        @media (min-width: 993px) {
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 50px;
+            }
+        }
+
+        @keyframes bounce-top {
+            0% {
+                -webkit-transform: translateY(-45px);
+                transform: translateY(-45px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                opacity: 1;
+            }
+
+            24% {
+                opacity: 1;
+            }
+
+            40% {
+                -webkit-transform: translateY(-24px);
+                transform: translateY(-24px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            65% {
+                -webkit-transform: translateY(-12px);
+                transform: translateY(-12px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            82% {
+                -webkit-transform: translateY(-6px);
+                transform: translateY(-6px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            93% {
+                -webkit-transform: translateY(-4px);
+                transform: translateY(-4px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            25%,
+            55%,
+            75%,
+            87% {
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            100% {
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+                opacity: 1;
+            }
+        }
+
+        @keyframes tracking-in-expand-fwd {
+            0% {
+                letter-spacing: -0.5em;
+                -webkit-transform: translateZ(-700px);
+                transform: translateZ(-700px);
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.6;
+            }
+
+            100% {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes heartbeat {
+            from {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: center center;
+                transform-origin: center center;
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            10% {
+                -webkit-transform: scale(0.91);
+                transform: scale(0.91);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            17% {
+                -webkit-transform: scale(0.98);
+                transform: scale(0.98);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            33% {
+                -webkit-transform: scale(0.87);
+                transform: scale(0.87);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            45% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+        }
+
+        @keyframes heartbeat {
+            from {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: center center;
+                transform-origin: center center;
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            10% {
+                -webkit-transform: scale(0.91);
+                transform: scale(0.91);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            17% {
+                -webkit-transform: scale(0.98);
+                transform: scale(0.98);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            33% {
+                -webkit-transform: scale(0.87);
+                transform: scale(0.87);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            45% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container1">
+        <div class="Row1">
+            <div class="HelpLine"><span></span>HelpLine:111-000-111</div>
+            <div class="SocialMediaIcon">
+                <ul>
+                    <li><a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/"><i class="fa-brands fa-square-youtube"></i></a></li>
+                    <li><a href="https://www.Instagram.com/"><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href="https://www.twitter.com/"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-square-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="Container2">
+        <div class="Row2">
+            <div class="Logo">Skyline Skardu</div>
+            <div class="Email">skylineskd@gmail.com</div>
+        </div>
+    </div>
+
+    <div class="Container3">
+        <div class="Row3">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Destinations.html">Destinations</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="JoinUs.html">Join Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade active">
+            <div class="numbertext">1 / 4</div>
+            <img src="Slider/lower-kachura-lake.jpg" style="width:100%; height: 300px; object-fit: cover;">
+            <div class="text">Lower Kachura</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="Slider/bilamik-Rondu.jpg" style="width:100%; height: 300px; object-fit: cover;">
+            <div class="text">Bilamik Rundu</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="Slider/k2.avif" style="width:100%; height: 300px; object-fit: cover;">
+            <div class="text">K-2</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="Slider/Katpana Desert.jpg" style="width:100%; height: 300px; object-fit: cover;">
+            <div class="text">Katpana Desert</div>
+        </div>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot active-dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <div class="Container5">
+        <div class="Row5">
+            <div class="Message">
+                <h1>The Destination Everyone Is Talking About</h1>
+                <p>
+                    Skardu is where the mountains touch the sky and the rivers sing ancient songs. Come for the
+                    breathtaking views, stay for the peace that settles deep in your soul. This isn't just a trip;
+                    it's a homecoming.</p>
+            </div>
+            <div class="MustVisitPlaces">
+                <div class="Place">
+                    <h4>Shangrila Resort</h4>
+                    <p>The most famous spot in all of Skardu. Known for its heart-shaped lake, red cottages, and serene
+                        atmosphere. You can enjoy a relaxing afternoon, try boating, or simply photograph the scenery.
+                    </p>
+                    <img src="Images/MustVisited/Lower.jpg" alt="Shangrila Resort">
+                </div>
+                <div class="Place">
+                    <h4>Upper Kachura Lake</h4>
+                    <p>More pristine and less crowded than its neighbor. The water is a stunning deep blue, surrounded
+                        by lush apricot orchards. You can go for a swim (if you're brave!) or enjoy camping under the
+                        stars.</p>
+                    <img src="Images/MustVisited/upp.jpg" alt="Upper Kachura Lake">
+                </div>
+                <div class="Place">
+                    <h4>Deosai National Park</h4>
+                    <p>The second highest plateau in the world (at over 13,000 feet!). A vast, breathtaking plain
+                        covered in wildflowers in summer, home to the Himalayan brown bear. It feels like another
+                        planet.</p>
+                    <img src="Images/MustVisited/Deosai.jpg" alt="Deosai National Park">
+                </div>
+                <div class="Place">
+                    <h4>Katpana Cold Desert</h4>
+                    <p>One of the highest cold deserts in the world. It's a surreal experience to see sand dunes
+                        surrounded by snow-capped peaks. You can even try a short jeep safari or simply watch the
+                        sunset.</p>
+                    <img src="Images/MustVisited/Katpana Desert.jpg" alt="Katpana Cold Desert">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Container6">
+        <div class="Row6">
+            <div class="Message">
+                <h1>Most Famous Places in Skardu</h1>
+                <p>Skardu is where the mountains touch the sky and the rivers sing ancient songs. Come for the
+                    breathtaking views, stay for the peace that settles deep in your soul. This isn't just a trip;
+                    it's a homecoming.</p>
+            </div>
+            <div class="FamousPlaces">
+                <div class="Place">
+                    <h4>Marsur Rock</h4>
+                    <p>A massive granite monolith rising dramatically from the valley floor. It offers incredible views
+                        and a thrilling challenge for climbers. The surrounding landscape creates a photographer's dream
+                        destination.</p>
+                    <img src="Images/famous/Marsur-Rock.jpg" alt="Marsur Rock">
+                </div>
+                <div class="Place">
+                    <h4>Blind Lake (Jarba Zoo)</h4>
+                    <p>A Blind Lake is a mysterious lake formed suddenly after an earthquake. The crystal-clear water
+                        reflects the surrounding mountains like a perfect mirror. It's now a peaceful picnic spot away
+                        from the crowds.</p>
+                    <img src="Images/famous/blind-lake.webp" alt="Blind Lake">
+                </div>
+                <div class="Place">
+                    <h4>Sarfaranga Cold Desert</h4>
+                    <p>Sarfaranga Cold Desert is the largest cold desert in the world, stretching for miles. Vast sand
+                        dunes meet the Shyok River beneath towering peaks. You can experience thrilling jeep safaris or
+                        camping under endless stars.</p>
+                    <img src="Images/famous/Katpana.webp" alt="Sarfaranga Cold Desert">
+                </div>
+                <div class="Place">
+                    <h4>Manthokha Waterfall</h4>
+                    <p>A spectacular waterfall cascading down green mountainside near Kharmang. The cool mist and
+                        thunderous sound create a refreshing escape. It's perfect for photography, picnics, and
+                        connecting with nature.</p>
+                    <img src="Images/famous/Manthokha Waterfall.jpg" alt="Manthokha Waterfall">
+                </div>
+                <div class="Place">
+                    <h4>Basho Valley</h4>
+                    <p>A lush green valley famous for its ancient Buddhist rock carvings. Surrounded by towering peaks
+                        and flowing streams, it feels untouched. Ideal for peaceful walks, cultural exploration, and
+                        stunning photography.</p>
+                    <img src="Images/famous/Basho Valley.jpg" alt="Basho Valley">
+                </div>
+                <div class="Place">
+                    <h4>Bilamik Valley</h4>
+                    <p>A hidden gem with dramatic cliffs and emerald green fields. The valley offers breathtaking views
+                        of rugged mountains and traditional villages. Perfect for trekkers seeking solitude and
+                        authentic Balti culture.</p>
+                    <img src="Images/famous/bilamik Valley.jpg" alt="Bilamik Valley">
+                </div>
+                <div class="Place">
+                    <h4>Khomush Waterfall</h4>
+                    <p>A hidden waterfall tucked away in a narrow, rocky gorge. The cool water plunges into a natural
+                        pool surrounded by towering cliffs. It's a rewarding short trek for adventure and nature lovers
+                        seeking pure, untouched beauty.</p>
+                    <img src="Images/famous/khomush Waterfall.jpg" alt="Khomush Waterfall">
+                </div>
+                <div class="Place">
+                    <h4>Chunda Valley</h4>
+                    <p>A remote valley known for its vibrant wildflowers and meandering streams. The lush landscapes
+                        contrast dramatically with the arid mountains around. Ideal for camping, trekking, and escaping
+                        into pure wilderness.</p>
+                    <img src="Images/famous/Chunda Valley.jpg" alt="Chunda Valley">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Footer">
+        <div class="FooterRow">
+            <div class="FooterMessage">
+                <h1>Skyline Skardu</h1>
+                <p>Skardu is where the mountains touch the sky and the rivers sing ancient songs. Come for the
+                    breathtaking views, stay for the peace that settles deep in your soul. This isn't just a trip;
+                    it's a homecoming.</p>
+            </div>
+            <div class="FooterSocialMediaIcon">
+                <ul>
+                    <li><a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/"><i class="fa-brands fa-square-youtube"></i></a></li>
+                    <li><a href="https://www.Instagram.com/"><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href="https://www.twitter.com/"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-square-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="FooterMenu">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Destinations.html">Destinations</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="JoinUs.html">Join Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="JS\Slider.js"></script>
+</body>
+
+</html>

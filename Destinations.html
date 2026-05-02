@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS\Slider.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+        }
+
+        .Container1 {
+            padding: 5px;
+            margin-bottom: 5px;
+            background-color: lightgray;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Container1 .Row1 {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10%;
+            margin-right: 10%;
+            flex-wrap: wrap;
+            align-items: center;
+            ;
+        }
+
+        .Container1 .Row1 .HelpLine {
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            animation: bounce-top 0.9s both;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon {
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul {
+            list-style-type: none;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li {
+            display: inline-block;
+            animation: bounce-top 0.9s both;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li a {
+            text-decoration: none;
+            color: rgb(33, 33, 33);
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li a i {
+            font-size: 25px;
+        }
+
+        .Container1 .Row1 .SocialMediaIcon ul li a :hover {
+            color: rgb(9, 181, 239);
+            animation: heartbeat 1.5s ease-in-out infinite both;
+        }
+
+        .Container2 {
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        .Container2 .Row2 {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10%;
+            margin-right: 10%;
+            flex-wrap: wrap;
+        }
+
+        .Container2 .Row2 .Logo {
+            padding: 5px;
+            text-align: center;
+            animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+
+        .Container2 .Row2 .Email {
+            padding: 5px;
+            text-align: center;
+            animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+
+        .Container3 {
+            padding: 5px;
+            margin-bottom: 5px;
+            background-color: rgb(33, 33, 33);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Container3 .Row3 {
+            display: flex;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            flex-wrap: wrap;
+        }
+
+        .Container3 .Row3 ul {
+            list-style-type: none;
+        }
+
+        .Container3 .Row3 ul li {
+            margin: 5px;
+            text-align: center;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .Container3 .Row3 ul li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            border-bottom: 3px solid rgb(255, 255, 255);
+            padding: 10px;
+        }
+
+        .Container3 .Row3 ul li a:hover {
+            border-top: 3px solid red;
+            border-bottom: none;
+        }
+
+        .Container6 {
+            padding: 5px;
+            margin-top: 20px;
+        }
+
+        .Container6 .Row6 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .Container6 .Row6 .Message {
+            text-align: center;
+        }
+
+        .Container6 .Row6 .Message h1 {
+            padding: 10px;
+            background-color: lightgray;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Container6 .Row6 .Message p {
+            padding: 25px;
+            margin-top: 10px;
+            line-height: 36px;
+        }
+
+        .Container6 .Row6 .FamousPlaces {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            column-gap: 4px;
+            row-gap: 10px;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place {
+            width: 280px;
+            margin-top: 5px;
+            text-align: justify;
+            text-align-last: center;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px;
+            padding-bottom: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place:hover {
+            animation: heartbeat 1.5s ease-in-out ;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place .MainSubdiv {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place .MainSubdiv h4 {
+            padding-top: 10px;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place .MainSubdiv hr {
+            height: 2px;
+            background-color: black;
+            width: 100%;
+            color: black;
+        }
+
+
+        .Container6 .Row6 .FamousPlaces .Place img {
+            width: 100%;
+            height: auto;
+            flex: 1 1 auto;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place .MainSubdiv .Subdiv {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place .MainSubdiv .Subdiv h4 {
+            padding-left: 3%;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place .MainSubdiv .Subdiv a {
+            background-color: lightblue;
+            margin-top: 10px;
+            padding: 3px;
+            border-radius: 5px;
+            list-style-type: none;
+            text-decoration: none;
+            border: 2px solid black;
+        }
+
+        .Container6 .Row6 .FamousPlaces .Place .MainSubdiv .Subdiv a:hover {
+            background-color: lightgreen;
+            border-top: 2px solid red;
+            animation: heartbeat 1.5s ease-in-out infinite both;
+        }
+
+        .Footer {
+            margin-top: 20px;
+            padding: 5px;
+            background-color: rgb(33, 33, 33);
+        }
+
+        .Footer .FooterRow {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .Footer .FooterRow .FooterMessage {
+            padding: 50px;
+        }
+
+        .Footer .FooterRow .FooterMessage h1 {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .Footer .FooterRow .FooterMessage p {
+            text-align: center;
+            color: white;
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon {
+            display: flex;
+            justify-content: center;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul {
+            list-style-type: none;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li {
+            display: inline-block;
+            border: 2px solid white;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li a {
+            text-decoration: none;
+            color: White;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+            font-size: 50px;
+        }
+
+        .Footer .FooterRow .FooterSocialMediaIcon ul li a :hover {
+            color: rgb(9, 181, 239);
+            animation: heartbeat 1.5s ease-in-out infinite both;
+        }
+
+        .Footer .FooterRow .FooterMenu {
+            display: flex;
+            justify-content: center;
+            padding: 25px;
+        }
+
+        .Footer .FooterRow .FooterMenu ul {
+            list-style-type: none;
+        }
+
+        .Footer .FooterRow .FooterMenu ul li {
+            display: inline-block;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .Footer .FooterRow .FooterMenu ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .Footer .FooterRow .FooterMenu ul li a:hover {
+            border-bottom: 3px solid white;
+        }
+
+
+
+
+
+
+
+
+        @media (min-width:320px) and (max-width:576px) {
+            .Container1 .Row1 {
+                flex-direction: column;
+                flex: 100%;
+            }
+        }
+
+        @media (min-width:320px) and (max-width:576px) {
+            .Container2 .Row2 {
+                flex-direction: column;
+                flex: 100%;
+            }
+        }
+
+        @media (min-width:320px) and (max-width:576px) {
+            .Container6 .Row6 .Message {
+                flex: 1 1 100%;
+            }
+
+            .Container6 .Row6 .FamousPlaces .Place {
+                flex: 1 1 100%;
+            }
+
+            .Container6 .Row6 .FamousPlaces .Place img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width:577px) and (max-width:768px) {
+            .Container6 .Row6 .Message {
+                flex: 1 1 100%;
+            }
+
+            .Container6 .Row6 .FamousPlaces .Place {
+                flex: 1 1 49%;
+            }
+
+            .Container6 .Row6 .FamousPlaces .Place img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width:769px) and (max-width:992px) {
+            .Container6 .Row6 .Message {
+                flex: 1 1 100%;
+            }
+
+            .Container6 .Row6 .FamousPlaces .Place {
+                flex: 1 1 33%;
+            }
+
+            .Container6 .Row6 .FamousPlaces .Place img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width:993px) and (max-width:1400px) {
+            .Container6 .Row6 .Message {
+                flex: 1 1 100%;
+            }
+
+            .Container6 .Row6 .FamousPlaces .Place {
+                flex: 1 1 24%;
+            }
+
+            .Container6 .RowRow65 .FamousPlaces .Place img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width:1401px) and (max-width:2160px) {
+            .Container6 .Row6 .Message {
+                flex: 1 1 100%;
+            }
+
+            .Container6 .Row6 .FamousPlaces .Place {
+                flex: 1 1 24%;
+            }
+
+            .Container6 .RowRow65 .FamousPlaces .Place img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width:2161px) and (max-width:3840px) {
+            .Container6 .Row6 .Message {
+                flex: 1 1 100%;
+            }
+
+            .Container6 .Row6 .FamousPlaces .Place {
+                flex: 1 1 24%;
+            }
+
+            .Container6 .RowRow6 .FamousPlaces .Place img {
+                width: 100%;
+            }
+        }
+
+
+
+
+        @media (min-width:320px) and (max-width:576px) {
+            .Footer .FooterRow {
+                flex: 100%;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li {
+                margin: 1px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 20px;
+            }
+
+            .Footer .FooterRow .FooterMenu {
+                text-align: center;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: block;
+            }
+        }
+
+        @media (min-width:577px) and (max-width:768px) {
+            .Footer .FooterRow {
+                flex: 100%;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li {
+                margin: 1px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 20px;
+            }
+
+            .Footer .FooterRow .FooterMenu {
+                text-align: center;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: block;
+            }
+        }
+
+        @media (min-width:769px) and (max-width:992px) {
+            .Footer .FooterRow {
+                flex: 100%;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li {
+                margin: 1px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 30px;
+            }
+
+            .Footer .FooterRow .FooterMenu {
+                text-align: center;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: inline-block;
+            }
+        }
+
+        @media (min-width:993px) and (max-width:1400px) {
+            .Footer .FooterRow {
+                flex: 100%;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li {
+                margin: 1px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 40px;
+            }
+
+            .Footer .FooterRow .FooterMenu {
+                text-align: center;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: inline-block;
+            }
+        }
+
+        @media (min-width:1401px) and (max-width:3840px) {
+            .Footer .FooterRow {
+                flex: 100%;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterMessage {
+                padding: 0px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterMessage h1 {
+                padding: 0px;
+                font-size: 22px;
+            }
+
+            .Footer .FooterRow .FooterMessage p {
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon {
+                text-align: center;
+                margin-top: 10px;
+                padding: 0px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li {
+                margin: 1px;
+            }
+
+            .Footer .FooterRow .FooterSocialMediaIcon ul li a i {
+                font-size: 50px;
+            }
+
+            .Footer .FooterRow .FooterMenu {
+                text-align: center;
+            }
+
+            .Footer .FooterRow .FooterMenu ul li {
+                display: inline-block;
+            }
+        }
+
+        @keyframes bounce-top {
+            0% {
+                -webkit-transform: translateY(-45px);
+                transform: translateY(-45px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                opacity: 1;
+            }
+
+            24% {
+                opacity: 1;
+            }
+
+            40% {
+                -webkit-transform: translateY(-24px);
+                transform: translateY(-24px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            65% {
+                -webkit-transform: translateY(-12px);
+                transform: translateY(-12px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            82% {
+                -webkit-transform: translateY(-6px);
+                transform: translateY(-6px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            93% {
+                -webkit-transform: translateY(-4px);
+                transform: translateY(-4px);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            25%,
+            55%,
+            75%,
+            87% {
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            100% {
+                -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+                opacity: 1;
+            }
+        }
+
+        @keyframes tracking-in-expand-fwd {
+            0% {
+                letter-spacing: -0.5em;
+                -webkit-transform: translateZ(-700px);
+                transform: translateZ(-700px);
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.6;
+            }
+
+            100% {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes heartbeat {
+            from {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: center center;
+                transform-origin: center center;
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            10% {
+                -webkit-transform: scale(0.91);
+                transform: scale(0.91);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            17% {
+                -webkit-transform: scale(0.98);
+                transform: scale(0.98);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+
+            33% {
+                -webkit-transform: scale(0.87);
+                transform: scale(0.87);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            45% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container1">
+        <div class="Row1">
+            <div class="HelpLine"><span></span>HelpLine:111-000-111</div>
+            <div class="SocialMediaIcon">
+                <ul>
+                    <li><a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/"><i class="fa-brands fa-square-youtube"></i></a></li>
+                    <li><a href="https://www.Instagram.com/"><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href="https://www.twitter.com/"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-square-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="Container2">
+        <div class="Row2">
+            <div class="Logo">Skyline Skardu </div>
+            <div class="Email">skylineskd@gmail.com</div>
+        </div>
+    </div>
+
+    <div class="Container3">
+        <div class="Row3">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Destinations.html">Destinations</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="JoinUs.html">Join Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="Slider/lower-kachura-lake.jpg" style="width:100%; height: 300px;">
+            <div class="text">Lower Kachura</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="Slider/bilamik-Rondu.jpg" style="width:100%; height: 300px;">
+            <div class="text">Bilamik Rundu</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="Slider/k2.avif" style="width:100%; height: 300px;">
+            <div class="text">K-2</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4 /4</div>
+            <img src="Slider/Katpana Desert.jpg" style="width:100%; height: 300px;">
+            <div class="text">Katpana Desert</div>
+        </div>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <div class="Container6">
+        <div class="Row6">
+            <div class="Message">
+                <h1>Let's find your place.</h2>
+                    <p>Some places you visit. Skardu, you feel. It seeps into your bones, calms your restless heart, and
+                        reminds you how beautiful this world truly is. Come as a stranger, leave as a lover of the
+                        mountains.</p>
+            </div>
+            <div class="FamousPlaces">
+                <div class="Place">
+                    <img src="Images/famous/Marsur-Rock.jpg" alt="" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Marsur Rock</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>50000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/blind-lake.webp" alt="" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Blind Lake (Jarba Zoo)</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>35000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/Cold Desert.jpg" alt="" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Sarfaranga Cold Desert</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>25000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/Manthokha Waterfall.jpg" alt="" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Manthokha Waterfall</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>45000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/Basho Valley.jpg" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Basho Valley</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>35000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/bilamik Valley.jpg" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Bilamik Valley</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>60000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/khomush Waterfall.jpg" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Khomush Waterfall</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>45000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/Chunda Valley.jpg" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Chunda Valley</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>50000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/Katpana.webp" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Kadpana Desert</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>30000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/Lower.jpg" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Lower Kachura lake</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>60000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/Deosai.jpg" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Deosie National Park</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>80000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Place">
+                    <img src="Images/famous/Upper.jpg" width="250px" style="height: 300px;">
+                    <div class="MainSubdiv">
+                        <h4><i class="fa-solid fa-map-pin"></i>Upper Kachura lake</h4>
+                        <hr>
+                        <div class="Subdiv">
+                            <h4>50000PKR</h4>
+                            <a href="JoinUs.html">Booknow</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Footer">
+        <div class="FooterRow">
+            <div class="FooterMessage">
+                <h1>Skyline Skardu</h1>
+                <p>Skardu is where the mountains touch the sky and the rivers sing ancient songs. Come for the
+                    breathtaking views, stay for the peace that settles deep in your soul. This isn't just a trip;
+                    it's a homecoming.</p>
+            </div>
+            <div class="FooterSocialMediaIcon">
+                <ul>
+                    <li><a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/"><i class="fa-brands fa-square-youtube"></i></a></li>
+                    <li><a href="https://www.Instagram.com/"><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href="https://www.twitter.com/"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-square-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="FooterMenu">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Destinations.html">Destinations</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="JoinUs.html">Join Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS\Slider.js"></script>
+</body>
+
+</html>
